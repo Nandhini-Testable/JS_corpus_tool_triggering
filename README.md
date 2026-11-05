@@ -159,3 +159,4 @@ the full 103-metric roster, the repair notes, and the live pin-resolution
 method (npm registry `engines.node` ranges, prereleases excluded).
 
 <!-- dummy PR 2026-11-05 09:34:49 -->
+<!-- dummy PR 2026-11-05 09:39:27 -->
