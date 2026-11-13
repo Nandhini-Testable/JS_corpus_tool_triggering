@@ -246,10 +246,10 @@
       "dir": "pydriller",
       "role": "primary",
       "block": "Code Churn",
-      "pin": "pydriller (pip)",
+      "pin": "node + git (corpus runner)",
       "status": "active",
       "measured": false,
-      "note": "PyDriller is a Python package invoked externally via a small wrapper script -- Node-version-independent by construction."
+      "note": "Git-history churn via run_pydriller.js (git log); output is reports/pydriller.js; at most 265 commits per run."
     },
     {
       "tool": "Git-Spark",

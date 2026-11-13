@@ -45,7 +45,7 @@ const WIRING = [
   { dir: "eslint-scope", label: "ESLint (eslint-scope)", role: "primary", entrypoint: "Tool Triggering (Synthetic Data)/eslint-scope/run_eslint_scope.sh" },
   { dir: "codeql", label: "CodeQL", role: "alternative", entrypoint: "Tool Triggering (Synthetic Data)/codeql/run_codeql.sh" },
   { dir: "knip", label: "knip", role: "alternative", entrypoint: "Tool Triggering (Synthetic Data)/knip/run_knip.sh" },
-  { dir: "pydriller", label: "PyDriller", role: "primary", entrypoint: "Tool Triggering (Synthetic Data)/pydriller/run_pydriller.py" },
+  { dir: "pydriller", label: "PyDriller", role: "primary", entrypoint: "Tool Triggering (Synthetic Data)/pydriller/run_pydriller.js" },
   { dir: "git-spark", label: "Git-Spark", role: "alternative", entrypoint: "Tool Triggering (Synthetic Data)/git-spark/run_git_spark.sh" }
 ];
 
@@ -103,7 +103,7 @@ function runAll() {
   const ran = [], skipped = [], absent = [], failed = [], unexpected = [];
   for (const row of WIRING) {
     const entry = path.join(ROOT, row.entrypoint);
-    const cmd = entry.endsWith('.py') ? 'python3' : 'bash';
+    const cmd = entry.endsWith('.js') ? 'node' : entry.endsWith('.py') ? 'python3' : 'bash';
     console.log(`\n--- ${row.label} (${row.dir}) ---`);
     const result = spawnSync(cmd, [entry], { cwd: ROOT, stdio: 'inherit' });
     const rc = result.status === null ? 1 : result.status;

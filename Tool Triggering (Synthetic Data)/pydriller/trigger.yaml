@@ -6,14 +6,14 @@ block: Code Churn
 branch: JS_V21_VITE_NPM_MONO
 node_family: "21"
 node_version: "21.7.3"
-pin: pydriller (pip, latest)
+pin: node + git (corpus runner)
 status: active
 measured: false
-entrypoint: Tool Triggering (Synthetic Data)/pydriller/run_pydriller.py
-outputs: reports/pydriller.json
+entrypoint: Tool Triggering (Synthetic Data)/pydriller/run_pydriller.js
+outputs: reports/pydriller.js
 expects: >-
-  per-file commit/churn counts from this branch's real git history. A real invocation was attempted from this session's Linux verification bridge and failed only because that bridge mounts this worktree through a `.git` file whose `gitdir:` pointer is a Windows-style absolute path it cannot resolve -- not a pydriller or corpus defect. The same command is expected to run normally on the real Windows host, the same way Claude Code's other real per-family verifications did.
+  per-file commit/churn counts from this branch's real git history (at most 265 commits per run), written as reports/pydriller.js.
 note: >-
-  PyDriller is a Python package invoked externally via a small wrapper script -- Node-version-independent by construction.
+  Git-history churn miner implemented in Node via git log; no Python entrypoints in this corpus fork.
 skip_exit_code: 3          # cannot run on this Node family
 missing_exit_code: 4       # binary/toolchain absent from this host
