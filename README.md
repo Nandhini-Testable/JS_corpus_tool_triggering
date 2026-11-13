@@ -164,3 +164,4 @@ method (npm registry `engines.node` ranges, prereleases excluded).
 <!-- dummy PR 2026-11-06 11:25:28 -->
 <!-- dummy PR 2026-11-06 13:08:38 -->
 <!-- dummy PR 2026-11-12 10:13:43 -->
+<!-- dummy PR 2026-11-13 11:00:39 -->
